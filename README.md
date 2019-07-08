@@ -1,0 +1,14 @@
+Application Java/Jee
+	-> Gestion de stock
+		- Conception (UML, BDD)
+		- Architecture de l'application
+		- Technologies:
+			- Java (8)
+			- Spring (MVC, SECURITY, ...)
+			- Hibernate
+			- Apache Velicity
+			- Java Mail
+			- JSP/JSTL
+			- REST WS (JSON)
+			- HTML, CSS, BOOTSTRAP, JQuery, ...
+			- IDE: Eclipse
