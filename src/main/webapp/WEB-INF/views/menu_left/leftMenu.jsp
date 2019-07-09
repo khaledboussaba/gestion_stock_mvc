@@ -1,107 +1,109 @@
-<ul
-	class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
-	id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
 	<!-- Sidebar - Brand -->
-	<a
-		class="sidebar-brand d-flex align-items-center justify-content-center"
-		href="index.html">
-		<div class="sidebar-brand-icon rotate-n-15">
-			<i class="fas fa-laugh-wink"></i>
-		</div>
-		<div class="sidebar-brand-text mx-3">
-			SB Admin <sup>2</sup>
-		</div>
+	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+		<div class="sidebar-brand-icon rotate-n-15"></div>
+		<div class="sidebar-brand-text mx-3">Gestion de Stock</div>
 	</a>
 
 	<!-- Divider -->
 	<hr class="sidebar-divider my-0">
 
 	<!-- Nav Item - Dashboard -->
-	<li class="nav-item"><a class="nav-link" href="index.html"> <i
-			class="fas fa-fw fa-tachometer-alt"></i> <fmt:message key="common.dashbord" />
-	</a></li>
+	<c:url value="/home/" var="home"/>
+	<li class="nav-item">
+		<a class="nav-link" href="${home }"> 
+			<i class="fas fa-fw fa-tachometer-alt"></i> 
+			<fmt:message key="common.dashbord" />
+		</a>
+	</li>
 
 	<!-- Divider -->
 	<hr class="sidebar-divider">
-
-	<!-- Heading -->
-	<div class="sidebar-heading">Interface</div>
-
-	<!-- Nav Item - Pages Collapse Menu -->
-	<li class="nav-item"><a class="nav-link collapsed" href="#"
-		data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
-		aria-controls="collapseTwo"> <i class="fas fa-fw fa-cog"></i> <span>Components</span>
-	</a>
-		<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-			data-parent="#accordionSidebar">
-			<div class="bg-white py-2 collapse-inner rounded">
-				<h6 class="collapse-header">Custom Components:</h6>
-				<a class="collapse-item" href="buttons.html">Buttons</a> <a
-					class="collapse-item" href="cards.html">Cards</a>
-			</div>
-		</div></li>
-
-	<!-- Nav Item - Utilities Collapse Menu -->
-	<li class="nav-item"><a class="nav-link collapsed" href="#"
-		data-toggle="collapse" data-target="#collapseUtilities"
-		aria-expanded="true" aria-controls="collapseUtilities"> <i
-			class="fas fa-fw fa-wrench"></i> <span>Utilities</span>
-	</a>
-		<div id="collapseUtilities" class="collapse"
-			aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-			<div class="bg-white py-2 collapse-inner rounded">
-				<h6 class="collapse-header">Custom Utilities:</h6>
-				<a class="collapse-item" href="utilities-color.html">Colors</a> <a
-					class="collapse-item" href="utilities-border.html">Borders</a> <a
-					class="collapse-item" href="utilities-animation.html">Animations</a>
-				<a class="collapse-item" href="utilities-other.html">Other</a>
-			</div>
-		</div></li>
-
-	<!-- Divider -->
-	<hr class="sidebar-divider">
-
-	<!-- Heading -->
-	<div class="sidebar-heading">Addons</div>
+	
+	<c:url value="/article/" var="article"/>
+	<li class="nav-item">
+		<a class="nav-link" href="${article }"> 
+			<i class="fas fa-fw fa-tachometer-alt"></i> 
+			<fmt:message key="common.article" />
+		</a>
+	</li>
 
 	<!-- Nav Item - Pages Collapse Menu -->
-	<li class="nav-item active"><a class="nav-link" href="#"
-		data-toggle="collapse" data-target="#collapsePages"
-		aria-expanded="true" aria-controls="collapsePages"> <i
-			class="fas fa-fw fa-folder"></i> <span>Pages</span>
-	</a>
-		<div id="collapsePages" class="collapse show"
-			aria-labelledby="headingPages" data-parent="#accordionSidebar">
+	
+	<li class="nav-item">
+		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClient" aria-expanded="true" aria-controls="#collapseClient"> 
+			<i class="fas fa-fw fa-cog"></i> 
+			<fmt:message key="common.client" />
+		</a>
+		<div id="collapseClient" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
-				<h6 class="collapse-header">Login Screens:</h6>
-				<a class="collapse-item" href="login.html">Login</a> <a
-					class="collapse-item" href="register.html">Register</a> <a
-					class="collapse-item" href="forgot-password.html">Forgot
-					Password</a>
-				<div class="collapse-divider"></div>
-				<h6 class="collapse-header">Other Pages:</h6>
-				<a class="collapse-item" href="404.html">404 Page</a> <a
-					class="collapse-item active" href="blank.html">Blank Page</a>
+				<c:url value="/client/" var="client"/>
+				<a class="collapse-item" href="${client }">
+					<fmt:message key="common.client" />
+				</a> 
+				<c:url value="/commandeClient/" var="cdeClient"/>
+				<a class="collapse-item" href="${cdeClient }">
+					<fmt:message key="common.client.commande" />
+				</a>
 			</div>
-		</div></li>
+		</div>
+	</li>
 
-	<!-- Nav Item - Charts -->
-	<li class="nav-item"><a class="nav-link" href="charts.html"> <i
-			class="fas fa-fw fa-chart-area"></i> <span>Charts</span>
-	</a></li>
+	<li class="nav-item">
+		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFournisseur" aria-expanded="true" aria-controls="#collapseFournisseur"> 
+			<i class="fas fa-fw fa-cog"></i> 
+			<fmt:message key="common.fournisseur" />
+		</a>
+		<div id="collapseFournisseur" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+			<div class="bg-white py-2 collapse-inner rounded">
+				<c:url value="/fournisseur/" var="fournisseur"/>
+				<a class="collapse-item" href="${fournisseur }">
+					<fmt:message key="common.fournisseur" />
+				</a> 
+				<c:url value="/commandeFournisseur/" var="cdeFournisseur"/>
+				<a class="collapse-item" href="cdeFournisseur">
+					<fmt:message key="common.fournisseur.commande" />
+				</a>
+			</div>
+		</div>
+	</li>
 
-	<!-- Nav Item - Tables -->
-	<li class="nav-item"><a class="nav-link" href="tables.html"> <i
-			class="fas fa-fw fa-table"></i> <span>Tables</span>
-	</a></li>
+	<c:url value="/stock/" var="stock"/>
+	<li class="nav-item">
+		<a class="nav-link" href="${stock }"> 
+			<i class="fas fa-fw fa-tachometer-alt"></i> 
+			<fmt:message key="common.stock" />
+		</a>
+	</li>
+	
+	<c:url value="/vente/" var="vente"/>
+	<li class="nav-item">
+		<a class="nav-link" href="${vente }"> 
+		<i  class="fas fa-fw fa-tachometer-alt"></i> 
+			<fmt:message key="common.vente" />
+		</a>
+	</li>
 
-	<!-- Divider -->
-	<hr class="sidebar-divider d-none d-md-block">
 
-	<!-- Sidebar Toggler (Sidebar) -->
-	<div class="text-center d-none d-md-inline">
-		<button class="rounded-circle border-0" id="sidebarToggle"></button>
-	</div>
+
+	<li class="nav-item">
+		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+			<i class="fas fa-fw fa-wrench"></i> 
+			<fmt:message key="common.parametrage" />
+		</a>
+		<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+			<div class="bg-white py-2 collapse-inner rounded">
+				<c:url value="/utilisateur/" var="utilisateur"/>
+				<a class="collapse-item" href="${utilisateur }">
+					<fmt:message key="common.parametrage.utilisateur" />
+				</a> 
+				<c:url value="/categorie/" var="categorie"/>
+				<a class="collapse-item" href="${categorie }">
+					<fmt:message key="common.parametrage.categorie" />
+				</a>
+			</div>
+		</div>
+	</li>
 
 </ul>
