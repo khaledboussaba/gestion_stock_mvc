@@ -30,6 +30,8 @@ public class Client implements Serializable {
 	
 	private String photo;
 	
+	private String sexe;
+
 	@OneToMany(mappedBy = "client")
 	private List<CommandeClient> commandeClients;
 	
@@ -82,6 +84,14 @@ public class Client implements Serializable {
 
 	public void setPhoto(String photo) {
 		this.photo = photo;
+	}
+	
+	public String getSexe() {
+		return sexe;
+	}
+
+	public void setSexe(String sexe) {
+		this.sexe = sexe;
 	}
 
 	public List<CommandeClient> getCommandeClients() {

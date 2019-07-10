@@ -63,11 +63,11 @@
 				
 				
 				
-				<!-- ********************************************* Data Table -->
+				<!-- ********************** Data Table *********************** -->
 			<div class="row">
 			<div class="col-lg-12">
 					  <ol class="breadcrumb">
-					    <li class="breadcrumb-item"><a href="#"><i class="fa fa-plus">&nbsp;<fmt:message key="common.ajouter"/></i></a></li>
+					    <li class="breadcrumb-item"><a href='<c:url value="/client/nouveau" />'><i class="fa fa-plus">&nbsp;<fmt:message key="common.ajouter"/></i></a></li>
 					    <li class="breadcrumb-item"><a href="#"><i class="fa fa-upload">&nbsp;<fmt:message key="common.exporter"/></i></a></li>
 					    <li class="breadcrumb-item"><a href="#"><i class="fa fa-download">&nbsp;<fmt:message key="common.importer"/></i></a></li>
 					  </ol>
@@ -97,7 +97,7 @@
                   	
                   	<c:forEach items="${clients }" var="client">
 	                    <tr>
-	                      <td><img src="${client.getPhoto() }" width="90px" height="90px"></td>
+	                      <td><img src="<%=request.getContextPath()%>/resources/img/${client.getPhoto() }" width="50px" height="50px"></td>
 	                      <td>${client.getNom() }</td>
 	                      <td>${client.getPrenom() }</td>
 	                      <td>${client.getAdresse() }</td>
