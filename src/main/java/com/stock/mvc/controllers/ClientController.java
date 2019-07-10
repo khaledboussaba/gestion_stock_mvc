@@ -1,16 +1,14 @@
 package com.stock.mvc.controllers;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.stock.mvc.entities.Client;
 import com.stock.mvc.services.IClientService;
@@ -49,9 +47,23 @@ public class ClientController {
 		}else {
 			client.setPhoto("inconnue.jpg");
 		}
-		
-		clientService.save(client);
+		if (client.getIdClient() != null) {
+			clientService.update(client);
+		} else {
+			clientService.save(client);
+		}
 		return "redirect:/client/";
+	}
+	
+	@RequestMapping(value = "/modifier/{idClient}")
+	public String modifierClient(Model model, @PathVariable Long idClient) {
+		if (idClient != null) {
+			Client client = clientService.getById(idClient);
+			if (client != null) {
+				model.addAttribute(client);
+			}
+		}
+		return "client/ajouterClient";
 	}
 
 }

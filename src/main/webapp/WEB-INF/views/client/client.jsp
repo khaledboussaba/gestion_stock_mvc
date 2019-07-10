@@ -103,10 +103,35 @@
 	                      <td>${client.getAdresse() }</td>
 	                      <td>${client.getMail() }</td>
 	                      <td>
-	                      	<a href="#"><i class="fa fa-edit">&nbsp;<fmt:message key="common.modifier"/></i></a>
+	                      <c:url value="/client/modifier/${client.getIdClient() }" var="urlModif"></c:url>
+	                      	<a href="${urlModif }"><i class="fa fa-edit">&nbsp;<fmt:message key="common.modifier"/></i></a>
 	                      	&nbsp;|&nbsp;
-	                      	<a href="#"><i class="fa fa-trash-alt">&nbsp;<fmt:message key="common.supprimer"/></i></a>
-	                      </td>
+	                      	<a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-trash-alt">&nbsp;<fmt:message key="common.supprimer"/></i></a>
+	                      
+	                      
+	                      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							  <div class="modal-dialog" role="document">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <h5 class="modal-title" id="exampleModalLabel">Confirmer la suppression</h5>
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							          <span aria-hidden="true">&times;</span>
+							        </button>
+							      </div>
+							      <div class="modal-body">
+							        <label>Êtes vous sûr de vouloir supprimer ${client.getNom() } ?</label>
+							      </div>
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-danger"><i class="fa fa-trash-alt"></i>&nbsp;Supprimer</button>
+							        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>&nbsp;Annuler</button>
+							      </div>
+							    </div>
+							  </div>
+						</div>
+	                      
+	                     
+	                      
+	                     </td>
 	                    </tr>
                   	</c:forEach>
                   	

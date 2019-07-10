@@ -69,6 +69,7 @@
 							<div class="panel-body">
 							<c:url value="/client/enregistrer" var="urlEnregistrer" />
 								<f:form modelAttribute="client" action="${urlEnregistrer }" method="post" >
+								<f:hidden path="idClient"/>
 									<div class="form-group">
 										<label><fmt:message key="common.nom"/></label>
 										<f:input path="nom" class="form-control" placeholder="Nom" />
