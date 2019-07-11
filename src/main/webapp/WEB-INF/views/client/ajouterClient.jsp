@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>SB Admin 2 - Blank</title>
+<title>Gestion du stock</title>
 
 <!-- Custom fonts for this template-->
 <link
@@ -55,16 +55,16 @@
 
 					<!-- Page Heading -->
 					<h1 class="h3 mb-4 text-gray-800"><fmt:message key="client.nouveau" /></h1>
-
+				
 				</div>
 				<!-- /.container-fluid -->
 
 			<!-- ********************** Form add Client *********************** -->
-				<div class="row">
+				<div class="row" style="margin: 10px;">
 					<div class="col-lg-12">
 						<div class="panel panel-primary">
 							<div class="panel-heading">
-								<fmt:message key="client.nouveau" />
+								
 							</div>
 							<div class="panel-body">
 							<c:url value="/client/enregistrer" var="urlEnregistrer" />
@@ -99,13 +99,9 @@
 										<label><fmt:message key="common.mail"/></label>
 										<f:input path="mail" class="form-control" placeholder="Mail" />
 									</div>
-<!-- 									<div class="form-group"> -->
-<%-- 										<label><fmt:message key="common.photo"/></label> --%>
-<!-- 										<input type="file" name="file" > -->
-<!-- 									</div> -->
 									<div class="panel-footer">
 										<button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;<fmt:message key="common.enregistrer"/></i></button>
-										<a href='<c:url value="/client/" />' class="btn btn-danger"><i class="fa fa-undo">&nbsp;<fmt:message key="common.annuler"/></i></a>
+										<a href='<c:url value="/client/" />' class="btn btn-secondary"><i class="fa fa-undo">&nbsp;<fmt:message key="common.annuler"/></i></a>
 									</div>
 								</f:form>
 							</div>

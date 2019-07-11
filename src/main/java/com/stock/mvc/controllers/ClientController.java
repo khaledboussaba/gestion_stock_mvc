@@ -65,5 +65,17 @@ public class ClientController {
 		}
 		return "client/ajouterClient";
 	}
+	
+	@RequestMapping(value = "/supprimer/{idClient}")
+	public String supprimerClient(Model model, @PathVariable Long idClient) {
+		if (idClient != null) {
+			Client client = clientService.getById(idClient);
+			if(client != null) {
+				//TODO verification avant suppression
+				clientService.remove(idClient);
+			}
+		}
+		return "redirect:/client/";
+	}
 
 }

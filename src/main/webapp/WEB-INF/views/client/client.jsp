@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>SB Admin 2 - Blank</title>
+<title>Gestion du stock</title>
 
 <!-- Custom fonts for this template-->
 <link
@@ -79,7 +79,7 @@
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary"><fmt:message key="client.liste" /></h6>
             </div>
-            <div class="card-body">
+            <div class="card-body" style="margin: 10px;">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
@@ -103,34 +103,32 @@
 	                      <td>${client.getAdresse() }</td>
 	                      <td>${client.getMail() }</td>
 	                      <td>
-	                      <c:url value="/client/modifier/${client.getIdClient() }" var="urlModif"></c:url>
-	                      	<a href="${urlModif }"><i class="fa fa-edit">&nbsp;<fmt:message key="common.modifier"/></i></a>
-	                      	&nbsp;|&nbsp;
-	                      	<a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-trash-alt">&nbsp;<fmt:message key="common.supprimer"/></i></a>
-	                      
-	                      
-	                      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-							  <div class="modal-dialog" role="document">
-							    <div class="modal-content">
-							      <div class="modal-header">
-							        <h5 class="modal-title" id="exampleModalLabel">Confirmer la suppression</h5>
-							        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							          <span aria-hidden="true">&times;</span>
-							        </button>
-							      </div>
-							      <div class="modal-body">
-							        <label>Êtes vous sûr de vouloir supprimer ${client.getNom() } ?</label>
-							      </div>
-							      <div class="modal-footer">
-							        <button type="button" class="btn btn-danger"><i class="fa fa-trash-alt"></i>&nbsp;Supprimer</button>
-							        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>&nbsp;Annuler</button>
-							      </div>
-							    </div>
-							  </div>
-						</div>
-	                      
-	                     
-	                      
+		                      <c:url value="/client/modifier/${client.getIdClient() }" var="urlModif"></c:url>
+		                      	<a href="${urlModif }"><i class="fa fa-edit">&nbsp;<fmt:message key="common.modifier"/></i></a>
+		                      	&nbsp;|&nbsp;
+		                      	<a href="javascript:void(0);" data-toggle="modal" data-target="#modalClient${client.getIdClient() }"><i class="fa fa-trash-alt">&nbsp;<fmt:message key="common.supprimer"/></i></a>
+		                      
+		                      
+		                      <div class="modal fade" id="modalClient${client.getIdClient() }" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								  <div class="modal-dialog" role="document">
+								    <div class="modal-content">
+								      <div class="modal-header">
+								        <h5 class="modal-title" id="exampleModalLabel"><fmt:message key="common.confirm.suppression"/></h5>
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								          <span aria-hidden="true">&times;</span>
+								        </button>
+								      </div>
+								      <div class="modal-body">
+								      	<fmt:message key="common.confirm.suppression.msg"/>&nbsp;<label>${client.getPrenom() }&nbsp;${client.getNom() } ?</label>
+								      </div>
+								      <div class="modal-footer">
+								      	<c:url value="/client/supprimer/${client.getIdClient() }" var="urlSuppression"></c:url>
+								        <a href="${urlSuppression }" class="btn btn-danger"><i class="fa fa-trash-alt"></i>&nbsp;<fmt:message key="common.supprimer"/></a>
+								        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>&nbsp;<fmt:message key="common.annuler"/></button>
+								      </div>
+								    </div>
+								  </div>
+							</div>
 	                     </td>
 	                    </tr>
                   	</c:forEach>

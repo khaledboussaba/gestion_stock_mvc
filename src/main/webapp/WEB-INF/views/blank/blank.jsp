@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>SB Admin 2 - Blank</title>
+<title>Gestion du stock</title>
 
 <!-- Custom fonts for this template-->
 <link
