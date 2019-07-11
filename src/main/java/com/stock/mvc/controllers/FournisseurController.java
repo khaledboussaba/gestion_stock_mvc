@@ -41,18 +41,18 @@ public class FournisseurController {
 	@RequestMapping(value = "/enregistrer", method = RequestMethod.POST)
 	public String enregistrerFournisseur(Model model, Fournisseur fournisseur) {
 
-		fournisseur.setPhoto("f1.png");
 		
 		if (fournisseur.getIdFournisseur() != null) {
 			fournisseurService.update(fournisseur);
 		} else {
+			fournisseur.setPhoto("f1.png");
 			fournisseurService.save(fournisseur);
 		}
 		return "redirect:/fournisseur/";
 	}
 	
 	@RequestMapping(value = "/modifier/{idFournisseur}")
-	public String modifierClient(Model model, @PathVariable Long idFournisseur) {
+	public String modifierFournisseur(Model model, @PathVariable Long idFournisseur) {
 		if (idFournisseur != null) {
 			Fournisseur fournisseur = fournisseurService.getById(idFournisseur);
 			if (fournisseur != null) {
@@ -63,7 +63,7 @@ public class FournisseurController {
 	}
 	
 	@RequestMapping(value = "/supprimer/{idFournisseur}")
-	public String supprimerClient(Model model, @PathVariable Long idFournisseur) {
+	public String supprimerFournisseur(Model model, @PathVariable Long idFournisseur) {
 		if (idFournisseur != null) {
 			Fournisseur fournisseur = fournisseurService.getById(idFournisseur);
 			if(fournisseur != null) {

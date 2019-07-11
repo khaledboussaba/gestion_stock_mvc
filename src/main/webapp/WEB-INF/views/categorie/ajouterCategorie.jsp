@@ -54,12 +54,12 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-4 text-gray-800"><fmt:message key="fournisseur.nouveau" /></h1>
+					<h1 class="h3 mb-4 text-gray-800"><fmt:message key="categorie.nouveau" /></h1>
 				
 				</div>
 				<!-- /.container-fluid -->
 
-			<!-- ********************** Form add Fournisseur *********************** -->
+			<!-- ********************** Form add Categorie *********************** -->
 				<div class="row" style="margin: 10px;">
 					<div class="col-lg-12">
 						<div class="panel panel-primary">
@@ -67,29 +67,20 @@
 								
 							</div>
 							<div class="panel-body">
-							<c:url value="/fournisseur/enregistrer" var="urlEnregistrer" />
-								<f:form modelAttribute="fournisseur" action="${urlEnregistrer }" method="post" >
-								<f:hidden path="idFournisseur"/>
-								<f:hidden path="photo"/>
+							<c:url value="/categorie/enregistrer" var="urlEnregistrer" />
+								<f:form modelAttribute="categorie" action="${urlEnregistrer }" method="post" >
+								<f:hidden path="idCategorie"/>
 									<div class="form-group">
-										<label><fmt:message key="common.nom"/></label>
-										<f:input path="nom" class="form-control" placeholder="Nom" />
+										<label><fmt:message key="categorie.code"/></label>
+										<f:input path="codeCategorie" class="form-control" placeholder="categorie" />
 									</div>
 									<div class="form-group">
-										<label><fmt:message key="common.prenom"/></label>
-										<f:input path="prenom" class="form-control" placeholder="Prenom" />
+										<label><fmt:message key="categorie.description"/></label>
+										<f:input path="description" class="form-control" placeholder="description" />
 									</div>    								
-									<div class="form-group">
-										<label><fmt:message key="common.adresse"/></label>
-										<f:input path="adresse" class="form-control" placeholder="Adresse" />
-									</div>
-									<div class="form-group">
-										<label><fmt:message key="common.mail"/></label>
-										<f:input path="mail" class="form-control" placeholder="Mail" />
-									</div>
 									<div class="panel-footer">
 										<button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;<fmt:message key="common.enregistrer"/></i></button>
-										<a href='<c:url value="/fournisseur/" />' class="btn btn-secondary"><i class="fa fa-undo">&nbsp;<fmt:message key="common.annuler"/></i></a>
+										<a href='<c:url value="/categorie/" />' class="btn btn-secondary"><i class="fa fa-undo">&nbsp;<fmt:message key="common.annuler"/></i></a>
 									</div>
 								</f:form>
 							</div>

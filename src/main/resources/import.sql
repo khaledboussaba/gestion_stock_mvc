@@ -5,3 +5,7 @@ INSERT INTO `client` (`adresse`, `mail`, `nom`, `photo`, `prenom`, `sexe`) VALUE
 INSERT INTO `fournisseur` (`adresse`, `mail`, `nom`, `photo`, `prenom`) VALUES ('14 rue ', 'f1@f1.fr', 'F1', 'f1.png', 'f1');
 INSERT INTO `fournisseur` (`adresse`, `mail`, `nom`, `photo`, `prenom`) VALUES  ('15 rue', 'f2@f2.fr', 'F2', 'f2.jpg', 'f2');
 INSERT INTO `fournisseur` (`adresse`, `mail`, `nom`, `photo`, `prenom`) VALUES  ('16 rue', 'f3@f3.fr', 'F3', 'f3.png', 'f3');
+
+INSERT INTO `categorie` (`code_categorie`, `description`) VALUES ('Cat1', 'Description 1');
+INSERT INTO `categorie` (`code_categorie`, `description`) VALUES ('Cat2', 'Description 2');
+INSERT INTO `categorie` (`code_categorie`, `description`) VALUES ('Cat3', 'Description 3');
