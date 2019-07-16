@@ -6,6 +6,7 @@ Application Java/Jee
 			- Java (8)
 			- Spring (MVC, SECURITY, ...)
 			- Hibernate
+			- i18n (internationalisation)
 			- Apache Velicity
 			- Java Mail
 			- JSP/JSTL

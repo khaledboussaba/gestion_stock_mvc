@@ -54,7 +54,7 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-4 text-gray-800"><fmt:message key="categorie.nouveau" /></h1>
+					<h1 class="h3 mb-4 text-gray-800"><fmt:message code="categorie.nouveau" /></h1>
 				
 				</div>
 				<!-- /.container-fluid -->
@@ -71,16 +71,16 @@
 								<f:form modelAttribute="categorie" action="${urlEnregistrer }" method="post" >
 								<f:hidden path="idCategorie"/>
 									<div class="form-group">
-										<label><fmt:message key="categorie.code"/></label>
+										<label><fmt:message code="categorie.code"/></label>
 										<f:input path="codeCategorie" class="form-control" placeholder="categorie" />
 									</div>
 									<div class="form-group">
-										<label><fmt:message key="categorie.description"/></label>
+										<label><fmt:message code="categorie.description"/></label>
 										<f:input path="description" class="form-control" placeholder="description" />
 									</div>    								
 									<div class="panel-footer">
-										<button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;<fmt:message key="common.enregistrer"/></i></button>
-										<a href='<c:url value="/categorie/" />' class="btn btn-secondary"><i class="fa fa-undo">&nbsp;<fmt:message key="common.annuler"/></i></a>
+										<button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;<fmt:message code="common.enregistrer"/></i></button>
+										<a href='<c:url value="/categorie/" />' class="btn btn-secondary"><i class="fa fa-undo">&nbsp;<fmt:message code="common.annuler"/></i></a>
 									</div>
 								</f:form>
 							</div>

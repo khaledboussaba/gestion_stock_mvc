@@ -54,7 +54,7 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-4 text-gray-800"><fmt:message key="article.nouveau" /></h1>
+					<h1 class="h3 mb-4 text-gray-800"><fmt:message code="article.nouveau" /></h1>
 				
 				</div>
 				<!-- /.container-fluid -->
@@ -71,37 +71,37 @@
 								<f:form modelAttribute="article" action="${urlEnregistrer }" method="post" >
 								<f:hidden path="idArticle"/>
 									<div class="form-group">
-										<label><fmt:message key="article.code"/></label>
+										<label><fmt:message code="article.code"/></label>
 										<f:input path="codeArticle" class="form-control" placeholder="Code article" />
 									</div>
 									<div class="form-group">
-										<label><fmt:message key="article.description"/></label>
+										<label><fmt:message code="article.description"/></label>
 										<f:input path="description" class="form-control" placeholder="Description" />
 									</div>
 									
 									<div class="form-group">
-										<label><fmt:message key="article.prix.unitaire.ht"/></label>
+										<label><fmt:message code="article.prix.unitaire.ht"/></label>
 										<f:input id="prixUnitaireHT" path="prixUnitaire" class="form-control" placeholder="Prix unitaire HT" />
 									</div>
 									
 									<div class="form-group">
-										<label><fmt:message key="article.tva"/></label>
+										<label><fmt:message code="article.tva"/></label>
 										<f:input id="tauxTva" path="tauxTva" class="form-control" placeholder="Taux TVA" />
 									</div>
 									
 									<div class="form-group">
-										<label><fmt:message key="article.prix.unitaire.ttc"/></label>
+										<label><fmt:message code="article.prix.unitaire.ttc"/></label>
 										<f:input id="prixUnitaireTTC" path="prixUnitaireTTC" class="form-control" placeholder="Prix unitaire TTC" />
 									</div>
 									
 									<div class="form-group">
-										<label><fmt:message key="article.categorie"/></label>
+										<label><fmt:message code="article.categorie"/></label>
 										<f:select path="categorie.idCategorie" items="${categories }" itemLabel="codeCategorie" itemValue="idCategorie" class="form-control"></f:select>
 									</div>
     			
 									<div class="panel-footer">
-										<button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;<fmt:message key="common.enregistrer"/></i></button>
-										<a href='<c:url value="/article/" />' class="btn btn-secondary"><i class="fa fa-undo">&nbsp;<fmt:message key="common.annuler"/></i></a>
+										<button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;<fmt:message code="common.enregistrer"/></i></button>
+										<a href='<c:url value="/article/" />' class="btn btn-secondary"><i class="fa fa-undo">&nbsp;<fmt:message code="common.annuler"/></i></a>
 									</div>
 								</f:form>
 							</div>

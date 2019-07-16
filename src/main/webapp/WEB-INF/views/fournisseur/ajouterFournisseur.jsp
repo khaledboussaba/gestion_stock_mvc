@@ -54,7 +54,7 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-4 text-gray-800"><fmt:message key="fournisseur.nouveau" /></h1>
+					<h1 class="h3 mb-4 text-gray-800"><fmt:message code="fournisseur.nouveau" /></h1>
 				
 				</div>
 				<!-- /.container-fluid -->
@@ -72,24 +72,24 @@
 								<f:hidden path="idFournisseur"/>
 								<f:hidden path="photo"/>
 									<div class="form-group">
-										<label><fmt:message key="common.nom"/></label>
+										<label><fmt:message code="common.nom"/></label>
 										<f:input path="nom" class="form-control" placeholder="Nom" />
 									</div>
 									<div class="form-group">
-										<label><fmt:message key="common.prenom"/></label>
+										<label><fmt:message code="common.prenom"/></label>
 										<f:input path="prenom" class="form-control" placeholder="Prenom" />
 									</div>    								
 									<div class="form-group">
-										<label><fmt:message key="common.adresse"/></label>
+										<label><fmt:message code="common.adresse"/></label>
 										<f:input path="adresse" class="form-control" placeholder="Adresse" />
 									</div>
 									<div class="form-group">
-										<label><fmt:message key="common.mail"/></label>
+										<label><fmt:message code="common.mail"/></label>
 										<f:input path="mail" class="form-control" placeholder="Mail" />
 									</div>
 									<div class="panel-footer">
-										<button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;<fmt:message key="common.enregistrer"/></i></button>
-										<a href='<c:url value="/fournisseur/" />' class="btn btn-secondary"><i class="fa fa-undo">&nbsp;<fmt:message key="common.annuler"/></i></a>
+										<button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;<fmt:message code="common.enregistrer"/></i></button>
+										<a href='<c:url value="/fournisseur/" />' class="btn btn-secondary"><i class="fa fa-undo">&nbsp;<fmt:message code="common.annuler"/></i></a>
 									</div>
 								</f:form>
 							</div>

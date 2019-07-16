@@ -14,7 +14,7 @@
 	<li class="nav-item">
 		<a class="nav-link" href="${home }"> 
 			<i class="fas fa-fw fa-tachometer-alt"></i> 
-			<fmt:message key="common.dashbord" />
+			<fmt:message code="common.dashbord" />
 		</a>
 	</li>
 
@@ -24,8 +24,8 @@
 	<c:url value="/article/" var="article"/>
 	<li class="nav-item">
 		<a class="nav-link" href="${article }"> 
-			<i class="fas fa-fw fa-tachometer-alt"></i> 
-			<fmt:message key="common.article" />
+			<i class="fas fa-fw fa-newspaper"></i> 
+			<fmt:message code="common.article" />
 		</a>
 	</li>
 
@@ -33,18 +33,18 @@
 	
 	<li class="nav-item">
 		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClient" aria-expanded="true" aria-controls="#collapseClient"> 
-			<i class="fas fa-fw fa-cog"></i> 
-			<fmt:message key="common.client" />
+			<i class="fas fa-fw fa-users"></i> 
+			<fmt:message code="common.client" />
 		</a>
 		<div id="collapseClient" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<c:url value="/client/" var="client"/>
 				<a class="collapse-item" href="${client }">
-					<fmt:message key="common.client" />
+					<fmt:message code="common.client" />
 				</a> 
 				<c:url value="/commandeClient/" var="cdeClient"/>
 				<a class="collapse-item" href="${cdeClient }">
-					<fmt:message key="common.client.commande" />
+					<fmt:message code="common.client.commande" />
 				</a>
 			</div>
 		</div>
@@ -52,18 +52,18 @@
 
 	<li class="nav-item">
 		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFournisseur" aria-expanded="true" aria-controls="#collapseFournisseur"> 
-			<i class="fas fa-fw fa-cog"></i> 
-			<fmt:message key="common.fournisseur" />
+			<i class="fas fa-fw fa-people-carry"></i> 
+			<fmt:message code="common.fournisseur" />
 		</a>
 		<div id="collapseFournisseur" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<c:url value="/fournisseur/" var="fournisseur"/>
 				<a class="collapse-item" href="${fournisseur }">
-					<fmt:message key="common.fournisseur" />
+					<fmt:message code="common.fournisseur" />
 				</a> 
 				<c:url value="/commandeFournisseur/" var="cdeFournisseur"/>
 				<a class="collapse-item" href="cdeFournisseur">
-					<fmt:message key="common.fournisseur.commande" />
+					<fmt:message code="common.fournisseur.commande" />
 				</a>
 			</div>
 		</div>
@@ -72,16 +72,16 @@
 	<c:url value="/stock/" var="stock"/>
 	<li class="nav-item">
 		<a class="nav-link" href="${stock }"> 
-			<i class="fas fa-fw fa-tachometer-alt"></i> 
-			<fmt:message key="common.stock" />
+			<i class="fas fa-fw fa-cubes"></i> 
+			<fmt:message code="common.stock" />
 		</a>
 	</li>
 	
 	<c:url value="/vente/" var="vente"/>
 	<li class="nav-item">
 		<a class="nav-link" href="${vente }"> 
-		<i  class="fas fa-fw fa-tachometer-alt"></i> 
-			<fmt:message key="common.vente" />
+		<i  class="fas fa-fw fa-cart-arrow-down"></i> 
+			<fmt:message code="common.vente" />
 		</a>
 	</li>
 
@@ -90,17 +90,17 @@
 	<li class="nav-item">
 		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
 			<i class="fas fa-fw fa-wrench"></i> 
-			<fmt:message key="common.parametrage" />
+			<fmt:message code="common.parametrage" />
 		</a>
 		<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<c:url value="/utilisateur/" var="utilisateur"/>
 				<a class="collapse-item" href="${utilisateur }">
-					<fmt:message key="common.parametrage.utilisateur" />
+					<fmt:message code="common.parametrage.utilisateur" />
 				</a> 
 				<c:url value="/categorie/" var="categorie"/>
 				<a class="collapse-item" href="${categorie }">
-					<fmt:message key="common.parametrage.categorie" />
+					<fmt:message code="common.parametrage.categorie" />
 				</a>
 			</div>
 		</div>

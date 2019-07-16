@@ -57,7 +57,7 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-4 text-gray-800"><fmt:message key="common.parametrage.categorie" /></h1>
+					<h1 class="h3 mb-4 text-gray-800"><fmt:message code="common.parametrage.categorie" /></h1>
 
 				</div>
 				
@@ -67,9 +67,9 @@
 			<div class="row">
 			<div class="col-lg-12">
 					  <ol class="breadcrumb">
-					    <li class="breadcrumb-item"><a href='<c:url value="/categorie/nouveau" />'><i class="fa fa-plus">&nbsp;<fmt:message key="common.ajouter"/></i></a></li>
-					    <li class="breadcrumb-item"><a href="#"><i class="fa fa-upload">&nbsp;<fmt:message key="common.exporter"/></i></a></li>
-					    <li class="breadcrumb-item"><a href="#"><i class="fa fa-download">&nbsp;<fmt:message key="common.importer"/></i></a></li>
+					    <li class="breadcrumb-item"><a href='<c:url value="/categorie/nouveau" />'><i class="fa fa-plus">&nbsp;<fmt:message code="common.ajouter"/></i></a></li>
+					    <li class="breadcrumb-item"><a href="#"><i class="fa fa-upload">&nbsp;<fmt:message code="common.exporter"/></i></a></li>
+					    <li class="breadcrumb-item"><a href="#"><i class="fa fa-download">&nbsp;<fmt:message code="common.importer"/></i></a></li>
 					  </ol>
 			</div>
 			</div>
@@ -77,16 +77,16 @@
 			<div class="card shadow mb-4">
 			
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary"><fmt:message key="categorie.liste" /></h6>
+              <h6 class="m-0 font-weight-bold text-primary"><fmt:message code="categorie.liste" /></h6>
             </div>
             <div class="card-body" style="margin: 10px;">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th><fmt:message key="categorie.code" /></th>
-                      <th><fmt:message key="categorie.description" /></th>
-                      <th><fmt:message key="common.actions" /></th>
+                      <th><fmt:message code="categorie.code" /></th>
+                      <th><fmt:message code="categorie.description" /></th>
+                      <th><fmt:message code="common.actions" /></th>
                     </tr>
                   </thead>
                   
@@ -98,27 +98,27 @@
 	                      <td>${categorie.getDescription() }</td>
 	                      <td>
 		                      <c:url value="/categorie/modifier/${categorie.getIdCategorie() }" var="urlModif"></c:url>
-		                      	<a href="${urlModif }"><i class="fa fa-edit">&nbsp;<fmt:message key="common.modifier"/></i></a>
+		                      	<a href="${urlModif }"><i class="fa fa-edit">&nbsp;<fmt:message code="common.modifier"/></i></a>
 		                      	&nbsp;|&nbsp;
-		                      	<a href="javascript:void(0);" data-toggle="modal" data-target="#modalCategorie${categorie.getIdCategorie() }"><i class="fa fa-trash-alt">&nbsp;<fmt:message key="common.supprimer"/></i></a>
+		                      	<a href="javascript:void(0);" data-toggle="modal" data-target="#modalCategorie${categorie.getIdCategorie() }"><i class="fa fa-trash-alt">&nbsp;<fmt:message code="common.supprimer"/></i></a>
 		                      
 		                      
 		                      <div class="modal fade" id="modalCategorie${categorie.getIdCategorie() }" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 								  <div class="modal-dialog" role="document">
 								    <div class="modal-content">
 								      <div class="modal-header">
-								        <h5 class="modal-title" id="exampleModalLabel"><fmt:message key="common.confirm.suppression"/></h5>
+								        <h5 class="modal-title" id="exampleModalLabel"><fmt:message code="common.confirm.suppression"/></h5>
 								        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								          <span aria-hidden="true">&times;</span>
 								        </button>
 								      </div>
 								      <div class="modal-body">
-								      	<fmt:message key="common.confirm.suppression.msg"/>&nbsp;<label>${categorie.getCodeCategorie() } ?</label>
+								      	<fmt:message code="common.confirm.suppression.msg"/>&nbsp;<label>${categorie.getCodeCategorie() } ?</label>
 								      </div>
 								      <div class="modal-footer">
 								      	<c:url value="/categorie/supprimer/${categorie.getIdCategorie() }" var="urlSuppression"></c:url>
-								        <a href="${urlSuppression }" class="btn btn-danger"><i class="fa fa-trash-alt"></i>&nbsp;<fmt:message key="common.supprimer"/></a>
-								        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>&nbsp;<fmt:message key="common.annuler"/></button>
+								        <a href="${urlSuppression }" class="btn btn-danger"><i class="fa fa-trash-alt"></i>&nbsp;<fmt:message code="common.supprimer"/></a>
+								        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>&nbsp;<fmt:message code="common.annuler"/></button>
 								      </div>
 								    </div>
 								  </div>
