@@ -33,7 +33,7 @@ public class ClientController {
 	@RequestMapping(value = "/nouveau", method = RequestMethod.GET)
 	public String ajouterClient(Model model) {
 		Client client = new Client();
-		model.addAttribute(client);
+		model.addAttribute("client", client);
 		return "client/ajouterClient";
 	}
 
@@ -60,7 +60,7 @@ public class ClientController {
 		if (idClient != null) {
 			Client client = clientService.getById(idClient);
 			if (client != null) {
-				model.addAttribute(client);
+				model.addAttribute("client", client);
 			}
 		}
 		return "client/ajouterClient";

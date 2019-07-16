@@ -57,17 +57,17 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-4 text-gray-800"><fmt:message key="common.client" /></h1>
+					<h1 class="h3 mb-4 text-gray-800"><fmt:message key="common.article" /></h1>
 
 				</div>
 				
 				
 				
-				<!-- ********************** Data Table *********************** -->
+				<!-- ********************** Data Table Article *********************** -->
 			<div class="row">
 			<div class="col-lg-12">
 					  <ol class="breadcrumb">
-					    <li class="breadcrumb-item"><a href='<c:url value="/client/nouveau" />'><i class="fa fa-plus">&nbsp;<fmt:message key="common.ajouter"/></i></a></li>
+					    <li class="breadcrumb-item"><a href='<c:url value="/article/nouveau" />'><i class="fa fa-plus">&nbsp;<fmt:message key="common.ajouter"/></i></a></li>
 					    <li class="breadcrumb-item"><a href="#"><i class="fa fa-upload">&nbsp;<fmt:message key="common.exporter"/></i></a></li>
 					    <li class="breadcrumb-item"><a href="#"><i class="fa fa-download">&nbsp;<fmt:message key="common.importer"/></i></a></li>
 					  </ol>
@@ -77,39 +77,43 @@
 			<div class="card shadow mb-4">
 			
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary"><fmt:message key="client.liste" /></h6>
+              <h6 class="m-0 font-weight-bold text-primary"><fmt:message key="article.liste" /></h6>
             </div>
             <div class="card-body" style="margin: 10px;">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th><fmt:message key="common.photo" /></th>
-                      <th><fmt:message key="common.nom" /></th>
-                      <th><fmt:message key="common.prenom" /></th>
-                      <th><fmt:message key="common.adresse" /></th>
-                      <th><fmt:message key="common.mail" /></th>
-                      <th><fmt:message key="common.actions" /></th>
+                      <th><fmt:message key="article.photo" /></th>
+                      <th><fmt:message key="article.code" /></th>
+                      <th><fmt:message key="article.description" /></th>
+                      <th><fmt:message key="article.prix.unitaire.ht" /></th>
+                      <th><fmt:message key="article.tva" /></th>
+                      <th><fmt:message key="article.prix.unitaire.ttc" /></th>
+                      <th><fmt:message key="article.categorie" /></th>
+                      <th><fmt:message key="article.actions" /></th>
                     </tr>
                   </thead>
                   
                   <tbody>
                   	
-                  	<c:forEach items="${clients }" var="client">
+                  	<c:forEach items="${articles }" var="article">
 	                    <tr>
-	                      <td><img src="<%=request.getContextPath()%>/resources/img/${client.getPhoto() }" width="50px" height="50px"></td>
-	                      <td>${client.getNom() }</td>
-	                      <td>${client.getPrenom() }</td>
-	                      <td>${client.getAdresse() }</td>
-	                      <td>${client.getMail() }</td>
+	                      <td><img src="<%=request.getContextPath()%>/resources/img/${article.getPhoto() }" width="50px" height="50px"></td>
+	                      <td>${article.getCodeArticle() }</td>
+	                      <td>${article.getDescription() }</td>
+	                      <td>${article.getPrixUnitaire() }</td>
+	                      <td>${article.getTauxTva() }</td>
+	                      <td>${article.getPrixUnitaireTTC() }</td>
+	                      <td>${article.getCategorie().getIdCategorie() }</td>
 	                      <td>
-		                      <c:url value="/client/modifier/${client.getIdClient() }" var="urlModif"></c:url>
+		                      <c:url value="/article/modifier/${article.getIdArticle() }" var="urlModif"></c:url>
 		                      	<a href="${urlModif }"><i class="fa fa-edit">&nbsp;<fmt:message key="common.modifier"/></i></a>
 		                      	&nbsp;|&nbsp;
-		                      	<a href="javascript:void(0);" data-toggle="modal" data-target="#modalClient${client.getIdClient() }"><i class="fa fa-trash-alt">&nbsp;<fmt:message key="common.supprimer"/></i></a>
+		                      	<a href="javascript:void(0);" data-toggle="modal" data-target="#modalArticle${article.getIdArticle() }"><i class="fa fa-trash-alt">&nbsp;<fmt:message key="common.supprimer"/></i></a>
 		                      
 		                      
-		                      <div class="modal fade" id="modalClient${client.getIdClient() }" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		                      <div class="modal fade" id="modalArticle${article.getIdArticle() }" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 								  <div class="modal-dialog" role="document">
 								    <div class="modal-content">
 								      <div class="modal-header">
@@ -119,10 +123,10 @@
 								        </button>
 								      </div>
 								      <div class="modal-body">
-								      	<fmt:message key="common.confirm.suppression.msg"/>&nbsp;<label>${client.getPrenom() }&nbsp;${client.getNom() } ?</label>
+								      	<fmt:message key="common.confirm.suppression.msg"/>&nbsp;<label>${article.getDescription() } ?</label>
 								      </div>
 								      <div class="modal-footer">
-								      	<c:url value="/client/supprimer/${client.getIdClient() }" var="urlSuppression"></c:url>
+								      	<c:url value="/article/supprimer/${article.getIdArticle() }" var="urlSuppression"></c:url>
 								        <a href="${urlSuppression }" class="btn btn-danger"><i class="fa fa-trash-alt"></i>&nbsp;<fmt:message key="common.supprimer"/></a>
 								        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>&nbsp;<fmt:message key="common.annuler"/></button>
 								      </div>

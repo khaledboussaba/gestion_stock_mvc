@@ -54,12 +54,12 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-4 text-gray-800"><fmt:message key="categorie.nouveau" /></h1>
+					<h1 class="h3 mb-4 text-gray-800"><fmt:message key="article.nouveau" /></h1>
 				
 				</div>
 				<!-- /.container-fluid -->
 
-			<!-- ********************** Form add Categorie *********************** -->
+			<!-- ********************** Form add Article *********************** -->
 				<div class="row" style="margin: 10px;">
 					<div class="col-lg-12">
 						<div class="panel panel-primary">
@@ -67,20 +67,41 @@
 								
 							</div>
 							<div class="panel-body">
-							<c:url value="/categorie/enregistrer" var="urlEnregistrer" />
-								<f:form modelAttribute="categorie" action="${urlEnregistrer }" method="post" >
-								<f:hidden path="idCategorie"/>
+							<c:url value="/article/enregistrer" var="urlEnregistrer" />
+								<f:form modelAttribute="article" action="${urlEnregistrer }" method="post" >
+								<f:hidden path="idArticle"/>
 									<div class="form-group">
-										<label><fmt:message key="categorie.code"/></label>
-										<f:input path="codeCategorie" class="form-control" placeholder="categorie" />
+										<label><fmt:message key="article.code"/></label>
+										<f:input path="codeArticle" class="form-control" placeholder="Code article" />
 									</div>
 									<div class="form-group">
-										<label><fmt:message key="categorie.description"/></label>
-										<f:input path="description" class="form-control" placeholder="description" />
-									</div>    								
+										<label><fmt:message key="article.description"/></label>
+										<f:input path="description" class="form-control" placeholder="Description" />
+									</div>
+									
+									<div class="form-group">
+										<label><fmt:message key="article.prix.unitaire.ht"/></label>
+										<f:input id="prixUnitaireHT" path="prixUnitaire" class="form-control" placeholder="Prix unitaire HT" />
+									</div>
+									
+									<div class="form-group">
+										<label><fmt:message key="article.tva"/></label>
+										<f:input id="tauxTva" path="tauxTva" class="form-control" placeholder="Taux TVA" />
+									</div>
+									
+									<div class="form-group">
+										<label><fmt:message key="article.prix.unitaire.ttc"/></label>
+										<f:input id="prixUnitaireTTC" path="prixUnitaireTTC" class="form-control" placeholder="Prix unitaire TTC" />
+									</div>
+									
+									<div class="form-group">
+										<label><fmt:message key="article.categorie"/></label>
+										<f:select path="categorie.idCategorie" items="${categories }" itemLabel="codeCategorie" itemValue="idCategorie" class="form-control"></f:select>
+									</div>
+    			
 									<div class="panel-footer">
 										<button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;<fmt:message key="common.enregistrer"/></i></button>
-										<a href='<c:url value="/categorie/" />' class="btn btn-secondary"><i class="fa fa-undo">&nbsp;<fmt:message key="common.annuler"/></i></a>
+										<a href='<c:url value="/article/" />' class="btn btn-secondary"><i class="fa fa-undo">&nbsp;<fmt:message key="common.annuler"/></i></a>
 									</div>
 								</f:form>
 							</div>
@@ -143,8 +164,10 @@
 		src="<%=request.getContextPath()%>/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 	<!-- Custom scripts for all pages-->
-	<script
-		src="<%=request.getContextPath()%>/resources/js/sb-admin-2.min.js"></script>
+	<script src="<%=request.getContextPath()%>/resources/js/sb-admin-2.min.js"></script>
+	
+	<!-- My Custom Javascript files -->
+	<script src="<%=request.getContextPath()%>/resources/javascript/article.js"></script>
 
 </body>
 

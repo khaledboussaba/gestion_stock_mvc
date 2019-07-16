@@ -27,7 +27,7 @@ public class Article implements Serializable {
 	
 	private String description;
 	
-	@Column(name = "prix_unitaire")
+	@Column(name = "prix_unitaire_ht")
 	private BigDecimal prixUnitaire;
 	
 	@Column(name = "taux_tva")

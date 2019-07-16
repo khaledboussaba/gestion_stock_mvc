@@ -52,7 +52,7 @@ public class CategorieController {
 		if (idCategorie != null) {
 			Categorie categorie = categorieService.getById(idCategorie);
 			if (categorie != null) {
-				model.addAttribute(categorie);
+				model.addAttribute("categorie", categorie);
 			}
 		}
 		return "categorie/ajouterCategorie";

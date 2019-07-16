@@ -9,3 +9,6 @@ INSERT INTO `fournisseur` (`adresse`, `mail`, `nom`, `photo`, `prenom`) VALUES  
 INSERT INTO `categorie` (`code_categorie`, `description`) VALUES ('Cat1', 'Description 1');
 INSERT INTO `categorie` (`code_categorie`, `description`) VALUES ('Cat2', 'Description 2');
 INSERT INTO `categorie` (`code_categorie`, `description`) VALUES ('Cat3', 'Description 3');
+
+INSERT INTO `article` (`photo`, `code_article`, `description`, `prix_unitaire_ht`, `taux_tva`, `prix_unitaire_ttc`, `id_categorie`) VALUES ('article.jpg', 'azerty', 'clavier français', 99, 20, 118.8, 1);
+INSERT INTO `article` (`photo`, `code_article`, `description`, `prix_unitaire_ht`, `taux_tva`, `prix_unitaire_ttc`, `id_categorie`) VALUES ('article.jpg', 'qwerty', 'clavier anglais', 99, 20, 118.8, 2);

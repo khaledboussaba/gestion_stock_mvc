@@ -32,13 +32,9 @@
 
 	<!-- Page Wrapper -->
 	<div id="wrapper">
-
 		<!-- Sidebar -->
-
 		<%@ include file="/WEB-INF/views/menu_left/leftMenu.jsp"%>
-
 		<!-- End of Sidebar -->
-
 		<!-- Content Wrapper -->
 		<div id="content-wrapper" class="d-flex flex-column">
 
@@ -63,13 +59,7 @@
 			<!-- End of Main Content -->
 
 			<!-- Footer -->
-			<footer class="sticky-footer bg-white">
-				<div class="container my-auto">
-					<div class="copyright text-center my-auto">
-						<span>Copyright &copy; Your Website 2019</span>
-					</div>
-				</div>
-			</footer>
+			<%@ include file="/WEB-INF/views/footer/footer.jsp"%>
 			<!-- End of Footer -->
 
 		</div>
