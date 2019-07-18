@@ -9,3 +9,9 @@ INSERT INTO `fournisseur` (`adresse`, `mail`, `nom`, `photo`, `prenom`) VALUES  
 INSERT INTO `categorie` (`code_categorie`, `description`) VALUES ('Cat1', 'Description 1');
 INSERT INTO `categorie` (`code_categorie`, `description`) VALUES ('Cat2', 'Description 2');
 INSERT INTO `categorie` (`code_categorie`, `description`) VALUES ('Cat3', 'Description 3');
+
+INSERT INTO `utilisateur` (`actived`, `mail`, `motDePasse`, `nom`, `photo`, `prenom`) VALUES (b'1', 'admin@mail.com', 'admin', 'admin', NULL, 'admin');
+INSERT INTO `utilisateur` (`actived`, `mail`, `motDePasse`, `nom`, `photo`, `prenom`) VALUES (b'1', 'user@mail.com', 'user', 'user', NULL, 'user');
+
+INSERT INTO `role` (`nom_role`, `id_utilisateur`) VALUES ('ROLE_ADMIN', '1');
+INSERT INTO `role` (`nom_role`, `id_utilisateur`) VALUES ('ROLE_USER', '2');

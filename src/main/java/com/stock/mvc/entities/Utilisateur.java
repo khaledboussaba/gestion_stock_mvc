@@ -1,11 +1,13 @@
 package com.stock.mvc.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -27,6 +29,11 @@ public class Utilisateur implements Serializable {
 	private String motDePasse;
 	
 	private String photo;
+	
+	private boolean actived;
+	
+	@OneToMany(mappedBy = "utilisateur")
+	private List<Role> roles;
 	
 	public Utilisateur() {
 	}
@@ -77,6 +84,22 @@ public class Utilisateur implements Serializable {
 
 	public void setIdUtilisateur(Long idUtilisateur) {
 		this.idUtilisateur = idUtilisateur;
+	}
+
+	public List<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
+
+	public boolean isActived() {
+		return actived;
+	}
+
+	public void setActived(boolean actived) {
+		this.actived = actived;
 	}
 
 }
