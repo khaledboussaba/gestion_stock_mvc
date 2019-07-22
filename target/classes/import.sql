@@ -15,3 +15,4 @@ INSERT INTO `utilisateur` (`actived`, `mail`, `motDePasse`, `nom`, `photo`, `pre
 
 INSERT INTO `role` (`nom_role`, `id_utilisateur`) VALUES ('ROLE_ADMIN', '1');
 INSERT INTO `role` (`nom_role`, `id_utilisateur`) VALUES ('ROLE_USER', '2');
+INSERT INTO `commande_client` (`codeCommande`, `dateCommande`, `id_client`) VALUES ('azerty', '2019-07-22 00:00:00', '1');

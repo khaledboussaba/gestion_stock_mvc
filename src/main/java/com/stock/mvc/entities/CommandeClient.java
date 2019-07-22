@@ -1,6 +1,8 @@
 package com.stock.mvc.entities;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -14,6 +16,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "commande_client")
@@ -35,7 +40,10 @@ public class CommandeClient implements Serializable {
 	private Client client;
 	
 	@OneToMany(mappedBy = "commandeClient")
-	private List<LigneCommandeClient> ligneCommandeClients;
+	private List<LigneCommandeClient> ligneCommandeClients = new ArrayList<LigneCommandeClient>();
+	
+	@Transient
+	private BigDecimal totalCommande; //champs non persisté en base de données grace à l'annotation Transient (c'est juste un champs calculable)
 	
 	public CommandeClient() {
 	}
@@ -72,6 +80,7 @@ public class CommandeClient implements Serializable {
 		this.client = client;
 	}
 
+	@JsonIgnore
 	public List<LigneCommandeClient> getLigneCommandeClients() {
 		return ligneCommandeClients;
 	}
@@ -80,4 +89,13 @@ public class CommandeClient implements Serializable {
 		this.ligneCommandeClients = ligneCommandeClients;
 	}
 	
+	public BigDecimal getTotalCommande() {
+		if (!ligneCommandeClients.isEmpty()) {
+			for (LigneCommandeClient ligneCommandeClient : ligneCommandeClients) {
+				BigDecimal totalLigne = ligneCommandeClient.getQuantite().multiply(ligneCommandeClient.getPrixUnitaire());
+				totalCommande = totalCommande.add(totalLigne);
+			}
+		}
+		return totalCommande;
+	}
 }
