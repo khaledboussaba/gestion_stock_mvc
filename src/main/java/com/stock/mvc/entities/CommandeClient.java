@@ -1,8 +1,8 @@
 package com.stock.mvc.entities;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -18,7 +18,10 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
 
 @Entity
 @Table(name = "commande_client")
@@ -40,7 +43,7 @@ public class CommandeClient implements Serializable {
 	private Client client;
 	
 	@OneToMany(mappedBy = "commandeClient")
-	private List<LigneCommandeClient> ligneCommandeClients = new ArrayList<LigneCommandeClient>();
+	private List<LigneCommandeClient> ligneCommandeClients;
 	
 	@Transient
 	private BigDecimal totalCommande; //champs non persisté en base de données grace à l'annotation Transient (c'est juste un champs calculable)
@@ -90,12 +93,33 @@ public class CommandeClient implements Serializable {
 	}
 	
 	public BigDecimal getTotalCommande() {
+		totalCommande = BigDecimal.ZERO;
 		if (!ligneCommandeClients.isEmpty()) {
 			for (LigneCommandeClient ligneCommandeClient : ligneCommandeClients) {
-				BigDecimal totalLigne = ligneCommandeClient.getQuantite().multiply(ligneCommandeClient.getPrixUnitaire());
-				totalCommande = totalCommande.add(totalLigne);
+				if (ligneCommandeClient.getQuantite() != null && ligneCommandeClient.getPrixUnitaire() != null) {
+					BigDecimal totalLigne = ligneCommandeClient.getQuantite().multiply(ligneCommandeClient.getPrixUnitaire());
+					totalCommande = totalCommande.add(totalLigne);					
+				}
 			}
 		}
 		return totalCommande;
 	}
+
+	@Transient
+	public String getLigneCommandeJson() {
+		if (!ligneCommandeClients.isEmpty()) {
+			try {
+				ObjectMapper mapper = new ObjectMapper();
+				return mapper.writeValueAsString(ligneCommandeClients);
+			} catch (JsonGenerationException e) {
+				e.printStackTrace();
+			} catch (JsonMappingException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		return "";
+	}
+	
 }

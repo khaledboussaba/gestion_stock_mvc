@@ -10,9 +10,18 @@ INSERT INTO `categorie` (`code_categorie`, `description`) VALUES ('Cat1', 'Descr
 INSERT INTO `categorie` (`code_categorie`, `description`) VALUES ('Cat2', 'Description 2');
 INSERT INTO `categorie` (`code_categorie`, `description`) VALUES ('Cat3', 'Description 3');
 
+INSERT INTO `article` (`code_article`, `description`, `photo`, `prix_unitaire_ht`, `prix_unitaire_ttc`, `taux_tva`, `id_categorie`) VALUES ('a1', 'article 1', NULL, '100', '120', '20', '1');
+INSERT INTO `article` (`code_article`, `description`, `photo`, `prix_unitaire_ht`, `prix_unitaire_ttc`, `taux_tva`, `id_categorie`) VALUES ('a2', 'article 2', NULL, '100', '120', '20', '2');
+INSERT INTO `article` (`code_article`, `description`, `photo`, `prix_unitaire_ht`, `prix_unitaire_ttc`, `taux_tva`, `id_categorie`) VALUES ('a3', 'article 3', NULL, '100', '120', '20', '3');
+
 INSERT INTO `utilisateur` (`actived`, `mail`, `motDePasse`, `nom`, `photo`, `prenom`) VALUES (b'1', 'admin@mail.com', 'admin', 'admin', NULL, 'admin');
 INSERT INTO `utilisateur` (`actived`, `mail`, `motDePasse`, `nom`, `photo`, `prenom`) VALUES (b'1', 'user@mail.com', 'user', 'user', NULL, 'user');
 
 INSERT INTO `role` (`nom_role`, `id_utilisateur`) VALUES ('ROLE_ADMIN', '1');
 INSERT INTO `role` (`nom_role`, `id_utilisateur`) VALUES ('ROLE_USER', '2');
+
 INSERT INTO `commande_client` (`codeCommande`, `dateCommande`, `id_client`) VALUES ('azerty', '2019-07-22 00:00:00', '1');
+INSERT INTO `commande_client` (`codeCommande`, `dateCommande`, `id_client`) VALUES ('qwerty', '2019-07-22 00:00:00', '2');
+
+INSERT INTO `ligne_commande_client` (`prixUnitaire`, `quantite`, `id_article`, `id_commande_client`) VALUES ('1', '1', '1', '1');
+INSERT INTO `ligne_commande_client` (`prixUnitaire`, `quantite`, `id_article`, `id_commande_client`) VALUES ('6', '2', '2', '2');

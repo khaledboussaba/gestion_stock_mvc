@@ -39,6 +39,7 @@ public class CommandeClientController {
 		}else {
 			for (CommandeClient commandeClient : commandesClient) {
 				List<LigneCommandeClient> ligneCdeClient = ligneCdeService.getByIdCommande(commandeClient.getIdCommandeClient());
+				
 				commandeClient.setLigneCommandeClients(ligneCdeClient);
 			}
 		}

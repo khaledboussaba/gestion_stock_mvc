@@ -89,11 +89,11 @@
                   		<tr>
                   			<td>${cde.getCodeCommande() }</td>
                   			<td>${cde.getDateCommande() }</td>
-                  			<td>${cde.getClient().getNom() }</td>
+                  			<td>${cde.getClient().getNom() }&nbsp;${cde.getClient().getPrenom() }</td>
                   			<td>${cde.getTotalCommande() }</td>
                   			<td>
-                  				<c:url value="/commandeClient/details/${cde.getIdCommandeClient() }" var="urlDetails"></c:url>
-		                      	<a href="${urlDetails }"><i class="fa fa-th-list">&nbsp;<fmt:message code="common.details"/></i></a>
+                  				<textarea id="json${cde.getIdCommandeClient() }" style="display: none;">${cde.getLigneCommandeJson() }</textarea>
+		                      	<a href="javascript:void(0);" onclick="updateDetailsCommande(${cde.getIdCommandeClient() });"><i class="fa fa-th-list">&nbsp;<fmt:message code="common.details"/></i></a>
 		                      	&nbsp;|&nbsp;
                   				<c:url value="/commandeClient/modifier/${cde.getIdCommandeClient() }" var="urlModif"></c:url>
 		                      	<a href="${urlModif }"><i class="fa fa-edit">&nbsp;<fmt:message code="common.modifier"/></i></a>
@@ -148,14 +148,11 @@
                       <th><fmt:message code="common.qte" /></th>
                       <th><fmt:message code="article.prix.unitaire.ttc" /></th>
                       <th><fmt:message code="commande.total" /></th>
-                      <th><fmt:message code="commande.actions" /></th>
                     </tr>
                   </thead>
                   
-                  <tbody>
-                  	
-                  	
-                  	
+                  <tbody id="detailCommande">
+                  	              	
                   </tbody>
                 </table>
               </div>
@@ -206,6 +203,9 @@
 	<!-- Custom scripts for all pages-->
 	<script
 		src="<%=request.getContextPath()%>/resources/js/sb-admin-2.min.js"></script>
+	
+	<!-- My Custom Javascript files -->
+	<script src="<%=request.getContextPath()%>/resources/javascript/commandeClient.js"></script>
 
 </body>
 
